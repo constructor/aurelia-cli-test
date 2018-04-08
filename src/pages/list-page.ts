@@ -1,8 +1,5 @@
-//import * as ons from "onsenui";
-//import { OnsPullHookElement } from "onsenui";
-
-import ons from 'onsenui/esm';
-import * as OnsPullHookElement from 'onsenui/esm/elements/ons-pull-hook';
+import * as ons from "onsenui";
+import { OnsPullHookElement } from "onsenui";
 
 export class ListPage {    
   message: string;
@@ -16,28 +13,33 @@ export class ListPage {
     var self = this;
     ons.ready(function () {
 
-      //self.pullHook.addEventListener('changestate', function (event: any) {
-      //  var message = '';
+      self.pullHook.addEventListener('changestate', function (event: any) {
+        var message = '';
 
-      //  switch (event.state) {
-      //    case 'initial':
-      //      message = 'Pull to refresh';
-      //      break;
-      //    case 'preaction':
-      //      message = 'Release';
-      //      break;
-      //    case 'action':
-      //      message = 'Loading...';
-      //      break;
-      //  }
+        switch (event.state) {
+          case 'initial':
+            message = 'Pull to refresh';
+            break;
+          case 'preaction':
+            message = 'Release';
+            break;
+          case 'action':
+            message = 'Loading...';
+            break;
+        }
 
-      //  self.pullHook.innerHTML = message;
-      //});
+        self.pullHook.innerHTML = message;
+      });
 
-      //self.pullHook.onAction = function (done) {
-      //  setTimeout(done, 1000);
-      //};
+      self.pullHook.onAction = function (done) {
+        setTimeout(self.refreshed(done), 1000);
+      };
     });
+  }
+
+  refreshed(done) {
+    alert("Refresh list triggered");
+    done();
   }
 
 }
