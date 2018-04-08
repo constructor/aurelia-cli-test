@@ -1,7 +1,16 @@
 <template>
   <ons-page>
     <ons-card>
-      <img src="./../images/aurelia-logo.png" style="width:100%" />
+      <img src="../images/aurelia-logo.png" alt="Aurelia" style="width: 100%">
+      <div class="content">
+        <div>
+          <a class="button" href="/#/pagedetail/123/detail"><ons-icon class="left" icon="ion-thumbsup" /> Single param link</a>
+          <hr />
+          <a class="button" href="/#/pagedetail/456/654/detail"><ons-icon class="left" icon="ion-share" /> Two param link</a>
+        </div>
+      </div>
+    </ons-card>
+    <ons-card>
       <ons-list>
         <ons-list-item tappable>
           <label class="left"><ons-checkbox input-id="check-1"></ons-checkbox></label>

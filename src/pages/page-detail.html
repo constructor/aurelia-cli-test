@@ -1,3 +1,13 @@
 <template>
-<h1>Page Detail</h1>
+  <ons-card>
+    <img src="//monaca.io/img/logos/download_image_onsenui_01.png" alt="Onsen UI" style="width: 100%">
+    <div class="title">
+      Detail Page
+    </div>
+    <p if.bind="!params.param1 && !params.param2">No passed params to display.</p>
+    <div class="content">
+      <p if.bind="params.param1">The first param value is: ${params.param1}</p>
+      <p if.bind="params.param2">The second param value is: ${params.param2}</p>
+    </div>
+  </ons-card>
 </template>
