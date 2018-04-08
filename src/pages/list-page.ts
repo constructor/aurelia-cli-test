@@ -38,8 +38,27 @@ export class ListPage {
   }
 
   refreshed(done) {
-    alert("Refresh list triggered");
-    done();
+    this.refreshList().then((result:any) => {
+      alert(result.message);
+      done();
+    },
+      (err) => {
+        alert(err);
+        done();
+    });
+  }
+
+  refreshList() {
+    return new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        var i = Math.random() * Math.floor(10);
+        if (i < 9)
+          resolve({ message: "90% chance it worked :)" });
+        else
+          reject(Error("10% chance it broke :("));
+
+      }, 3000);
+    });
   }
 
 }
