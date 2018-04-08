@@ -1,0 +1,93 @@
+<template>
+  <ons-page>
+    <ons-card>
+      <img src="./../images/aurelia-logo.png" style="width:100%" />
+      <ons-list>
+        <ons-list-item tappable>
+          <label class="left"><ons-checkbox input-id="check-1"></ons-checkbox></label>
+          <label for="check-1" class="center">Apple</label>
+        </ons-list-item>
+        <ons-list-item tappable>
+          <label class="left"><ons-checkbox input-id="check-2"></ons-checkbox></label>
+          <label for="check-2" class="center">Apricot</label>
+        </ons-list-item>
+        <ons-list-item tappable>
+          <label class="left"><ons-checkbox input-id="check-3"></ons-checkbox></label>
+          <label for="check-3" class="center">Avocado</label>
+        </ons-list-item>
+        <ons-list-item tappable>
+          <label class="left"><ons-checkbox input-id="check-4"></ons-checkbox></label>
+          <label for="check-4" class="center">Banana</label>
+        </ons-list-item>
+        <ons-list-item tappable>
+          <label class="left"><ons-checkbox input-id="check-5"></ons-checkbox></label>
+          <label for="check-5" class="center">Bilberry</label>
+        </ons-list-item>
+        <ons-list-item tappable>
+          <label class="left"><ons-checkbox input-id="check-6"></ons-checkbox></label>
+          <label for="check-6" class="center">Blackberry</label>
+        </ons-list-item>
+        <ons-list-item tappable>
+          <label class="left"><ons-checkbox input-id="check-7"></ons-checkbox></label>
+          <label for="check-7" class="center">Blackcurrant</label>
+        </ons-list-item>
+      </ons-list>
+    </ons-card>
+    <ons-card>
+      <ons-if platform="android">
+        This is Android
+      </ons-if>
+      <ons-if platform="ios other">
+        This is NOT Android
+      </ons-if>
+      <hr />
+      <ons-if orientation="landscape">
+        This is landscape
+      </ons-if>
+      <ons-if orientation="portrait">
+        This is portrait
+      </ons-if>
+    </ons-card>
+    <ons-card>
+      <ons-if orientation="portrait">
+        <ons-row>
+          <ons-col width="50%">Col 1 ${message}</ons-col>
+        </ons-row>
+        <ons-row>
+          <ons-col>Col 2</ons-col>
+        </ons-row>
+        <ons-row>
+          <ons-col width="50%">Col 3</ons-col>
+        </ons-row>
+        <ons-row>
+          <ons-col>Col 4</ons-col>
+        </ons-row>
+      </ons-if>
+      <ons-if orientation="landscape">
+        <ons-row>
+          <ons-col width="25%">Col 1 ${message}</ons-col>
+          <ons-col width="25%">Col 2</ons-col>
+          <ons-col width="25%">Col 3</ons-col>
+          <ons-col width="25%">Col 4</ons-col>
+        </ons-row>
+      </ons-if>
+    </ons-card>
+    <ons-speed-dial position="bottom right" direction="up">
+      <ons-fab>
+        <ons-icon icon="md-share"></ons-icon>
+      </ons-fab>
+      <ons-speed-dial-item>
+        <ons-icon icon="md-twitter"></ons-icon>
+      </ons-speed-dial-item>
+      <ons-speed-dial-item>
+        <ons-icon icon="md-facebook"></ons-icon>
+      </ons-speed-dial-item>
+      <ons-speed-dial-item>
+        <ons-icon icon="md-google-plus"></ons-icon>
+      </ons-speed-dial-item>
+      <ons-speed-dial-item>
+        <ons-icon icon="md-alarm"></ons-icon>
+      </ons-speed-dial-item>
+    </ons-speed-dial>
+  </ons-page>
+</template>

@@ -1,0 +1,103 @@
+<template>
+  <ons-splitter>
+
+    <ons-splitter-side ref="menu" side="left" width="85%" collapse swipeable>
+
+      <ons-page>
+        <ons-toolbar>
+          <div class="left"></div>
+          <div class="center">Menu Title</div>
+          <div class="right"></div>
+        </ons-toolbar>
+        <img src="images/aurelia-logo.png" style="width:100%" />
+        <ons-list>
+          <ons-list-item repeat.for="row of router.navigation" tappable click.delegate="loadPage(row)">
+            <!-- uses aurelia navigation -->
+            <div class="left">${row.title}</div>
+            <!--<div class="center"><i class="material-icons">hourglass_empty</i></div>-->
+            <div class="right">
+              <!--
+            https://onsen.io/v2/api/react/Icon.html#tutorial
+            http://zavoloklom.github.io/material-design-iconic-font/icons.html
+        -->
+              <ons-icon icon="md-chevron-right"></ons-icon>
+            </div>
+          </ons-list-item>
+        </ons-list>
+
+        <!-- These use the templates below. -->
+        <!--
+  <ons-list>
+    <ons-list-item tappable click.delegate="loadTemplate('nested-template1.html')">
+      Nested Template 1
+    </ons-list-item>
+    <ons-list-item tappable click.delegate="loadTemplate('nested-template2.html')">
+      Nested Template 2
+    </ons-list-item>
+  </ons-list>
+  -->
+
+      </ons-page>
+    </ons-splitter-side>
+
+    <ons-splitter-content ref="content">
+      <ons-page>
+        <ons-toolbar>
+          <div class="left">
+            <ons-toolbar-button click.delegate="openMenu()">
+              <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+            </ons-toolbar-button>
+          </div>
+          <div class="center">
+            ${message}
+          </div>
+          <div class="right">
+            <ons-toolbar-button><ons-icon icon="md-settings"></ons-icon></ons-toolbar-button>
+          </div>
+        </ons-toolbar>
+        <!-- where pages are rendered -->
+        <router-view></router-view>
+      </ons-page>
+    </ons-splitter-content>
+
+  </ons-splitter>
+
+  <!-- Nested Templates for the OnsSplitterContentElement load function -->
+  <!-- All functions in these templates are called in their own view models, as such
+       any shared functionality must be made available to all via inheritance or services -->
+  <!--<ons-template id="nested-template1.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button click.delegate="openMenu()">
+            <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Nested Template 1
+        </div>
+      </ons-toolbar>
+      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+        Swipe right to open the menu! Template 1
+      </p>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="nested-template2.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button click.delegate="openMenu()">
+            <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Nested Template 2
+        </div>
+      </ons-toolbar>
+      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+        Swipe right to open the menu! Template 2
+      </p>
+    </ons-page>
+  </ons-template>-->
+</template>
